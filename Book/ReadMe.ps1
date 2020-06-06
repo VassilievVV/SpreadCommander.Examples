@@ -334,6 +334,18 @@ VariableName can be one of following:
 	<td>Spreadsheet pivot table. First parameter is filename. Second parameter is pivot sheet name or pivot table name (in form "Worksheet!PivotTable").
 		Also parameters "recalculate" (with synonyms "rebuild" and "recalc"), "dataonly" are supported.</td>
 </tr>
+<tr>
+	<td>FOOTNOTE</td>
+	<td>Adds a FootNote to current text. First parameter is text. Parameters
+		Format (can have value Text or Html, Html (same as Format=HTML) and
+		Mark are supported.</td>
+</td>
+<tr>
+	<td>ENDNOTE</td>
+	<td>Adds a EndNote to current text. First parameter is text. Parameters
+		Format (can have value Text or Html, Html (same as Format=HTML) and
+		Mark are supported.</td>
+</td>
 </table>
 <br>
 To add fields from PowerShell script use switch <b>ExpandFields</b> that is available in cmdlets <i>Write-Text</i> 
@@ -343,7 +355,7 @@ To add fields from PowerShell script use switch <b>ExpandFields</b> that is avai
 $imagePath  = $schost.MapPath('~\..\Common\SpreadCommander.png').Replace('\', '\\');
 
 Write-Text -ParagraphStyle:'Text' -ExpandFields @"
-Today is {DATE} {TIME}.
+Today is {DATE} {TIME}{#FOOTNOTE "Foot note at end of the page." "Mark=*"}.
 Current document contains {NUMPAGES} pages.
 
 {INCLUDEPICTURE "$imagePath"}

@@ -41,7 +41,6 @@ $a * $a | Write-Text;
 Write-Text -ParagraphStyle:'Header4' 'Output to different formats:';
 
 (1 / ($a * $b)).ToString();
-(1 / ($a * $b)).ToInternalString();
 (1 / ($a * $b)).ToLaTeX();
 (1 / ($a * $b)).ToLaTeX() | Write-Latex -FontSize:36;
 

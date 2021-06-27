@@ -49,6 +49,40 @@ order by c.[Country Code], gdp.Year;
 
 $dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
 
+$dtSankey = [Data.DataTable]::new('Sankey');
+[void]$dtSankey.Columns.Add('Source', [string]);
+[void]$dtSankey.Columns.Add('Target', [string]);
+[void]$dtSankey.Columns.Add('Weight', [double]);
+[void]$dtSankey.Columns.Add('Selected', [boolean]);
+
+[void]$dtSankey.Rows.Add('France', 'UK', 53, $true);
+[void]$dtSankey.Rows.Add('Australia', 'UK', 72, $false);
+[void]$dtSankey.Rows.Add('France', 'Canada', 81, $true);
+[void]$dtSankey.Rows.Add('China', 'Canada', 96, $false);
+[void]$dtSankey.Rows.Add('UK', 'France', 61, $false);
+[void]$dtSankey.Rows.Add('Canada', 'France', 89, $false);
+
+$dataSet.Tables.Add($dtSankey);
+
+$dataSet.Tables['Countries'] |
+	Select-Object -Property:@{Name='Code'; Expression='Country Code'}, 'Country', 'Special Notes' |
+	Out-SpreadTable -TableName:'Countries' -SheetName:'Countries' `
+		-TableStyle:Medium1 -WrapText `
+		-ColumnWidths: @{ 'Code'=15; 'Country'=25; 'Special Notes'=40 } `
+		-VerticalAlignment:Top -Replace;
+		
+$dataSet.Tables['Data'] | ?{ $_.Year -eq 2014 } |
+	Select-Object -Property:@{Name='Code'; Expression='Country Code'}, 'GDP', 'EPC' |
+	Sort-Object -Property: 'Code' |
+	Out-SpreadTable -TableName:'Data' -SheetName:'Data' `
+		-ColumnNumberFormats:@{ 'GDP'= '#,##0'; 'EPC'='#,##0' } `
+		-ColumnWidths: @{ 'Code'=5; 'GDP'=10; 'EPC'=10 } `
+		-TableStyle:Medium1 -Replace;
+		
+$dataSet.Tables['Sankey'] |
+    Out-SpreadTable -SheetName:'Sankey' -TableName:'Sankey' `
+        -TableStyle:Medium1 -Replace;
+
 Add-BookPageBreak;
 Write-Text -ParagraphStyle:'Header3' 'BAR CHART';
 Write-Html -ParagraphStyle:'Text' @'
@@ -189,6 +223,18 @@ $dataSet.Tables['Data'] | ?{ $_.Year -eq 2018 } |
 		-AlignmentVertical:BottomOutside -Direction:LeftToRight |
 	Set-ChartSeriesLabel -Font:'Tahoma,7' |
 	Write-Chart -Width:2000 -Height:1600;
+	
+Add-BookPageBreak;	
+Write-Text -ParagraphStyle:'Header3' 'SANKEY DIAGRAM';
+Write-Html -ParagraphStyle:'Text' @'
+<p align=justify>Special <b>Chart</b> created with own cmdlets.</p>
+'@;
+$dataSet.Tables['Sankey'] |
+    Write-SankeyDiagram -Source:'Source' -Target:'Target' `
+        -Weight:'Weight' -Selected:'Selected' `
+        -SelectedNodes:@('France', 'China') -Palette:NorthernLights `
+        -BackColor:Beige -TitleText:'Sankey Diagram' `
+        -Width:500 -Height:300 -Scale:4;
 	
 Add-BookPageBreak;
 Write-Text -ParagraphStyle:'Header3' 'MULTIPLE SERIES';
@@ -358,22 +404,7 @@ $dataSet.Tables['Data'] | ?{ $_.Country -eq 'Europe & Central Asia' } |
 	Add-ChartIndicator StandardErrorBars -SeriesName:'GDP' -Name:'Standard Error Bars' `
 		-Color:'Brown' -ShowInLegend |
 	Write-Chart -Width:2000 -Height:2000;
-
-$dataSet.Tables['Countries'] |
-	Select-Object -Property:@{Name='Code'; Expression='Country Code'}, 'Country', 'Special Notes' |
-	Out-SpreadTable -TableName:'Countries' -SheetName:'Countries' `
-		-TableStyle:Medium1 -WrapText `
-		-ColumnWidths: @{ 'Code'=15; 'Country'=25; 'Special Notes'=40 } `
-		-VerticalAlignment:Top -Replace;
-		
-$dataSet.Tables['Data'] | ?{ $_.Year -eq 2014 } |
-	Select-Object -Property:@{Name='Code'; Expression='Country Code'}, 'GDP', 'EPC' |
-	Sort-Object -Property: 'Code' |
-	Out-SpreadTable -TableName:'Data' -SheetName:'Data' `
-		-ColumnNumberFormats:@{ 'GDP'= '#,##0'; 'EPC'='#,##0' } `
-		-ColumnWidths: @{ 'Code'=5; 'GDP'=10; 'EPC'=10 } `
-		-TableStyle:Medium1 -Replace;
-
+	
 $dataSet.Dispose();
 
 
@@ -399,6 +430,7 @@ $cmdlets = [string[]]@(
 	'New-Chart|Help for cmdlet <i>New-Chart</i> with parameter sets for different diagrams (XY, XY3D, Pie etc) is provided in later section of this <b>Book</b>',
 	'Save-Chart',
 	'Save-ChartTemplate',
+	'Save-SankeyDiagram',
 	'Set-ChartAxis',
 	'Set-ChartAxisLabel',
 	'Set-ChartAxisTitle',
@@ -406,7 +438,8 @@ $cmdlets = [string[]]@(
 	'Set-ChartLegend',
 	'Set-ChartSeriesLabel',
 	'Set-ChartTotalLabel',
-	'Write-Chart'
+	'Write-Chart',
+	'Write-SankeyDiagram'
 );
 
 $firstCmdlet = $true;

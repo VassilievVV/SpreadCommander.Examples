@@ -201,6 +201,24 @@ Write-Html -ParagraphStyle:'Text' @'
 
 Write-Html -ParagraphStyle:'Text' @'
 <br>
+<i>Hash</i>:
+
+<ul>
+	<li><p><b>HASH.MD5</b></p>
+		<p align=justify>Calculates MD5 hash of the string.</p>
+	<li><p><b>HASH.SHA1</b></p>
+		<p align=justify>Calculates SHA-1 hash of the string.</p>
+	<li><p><b>HASH.SHA256</b></p>
+		<p align=justify>Calculates SHA-256 hash of the string.</p>
+	<li><p><b>HASH.SHA384</b></p>
+		<p align=justify>Calculates SHA-384 hash of the string.</p>
+	<li><p><b>HASH.SHA512</b></p>
+		<p align=justify>Calculates SHA-512 hash of the string.</p>
+</ul>
+'@;
+
+Write-Html -ParagraphStyle:'Text' @'
+<br>
 <i>Path</i>:
 
 <ul>
@@ -217,6 +235,17 @@ Write-Html -ParagraphStyle:'Text' @'
 	<li><p><b>PATH.GETFILENAMEWITHOUTEXTENSION</b></p>
 		<p align=justify>Returns the file name of the specified path string without the extension.</p>
 	<li>
+</ul>
+'@;
+
+Write-Html -ParagraphStyle:'Text' @'
+<br>
+<i>GUID</i>:
+
+<ul>
+	<li><p><b>NEWID</b></p>
+		<p align=justify>Returns as new instance of GUID formatted using 
+		    optional format specifier (N, D, B, P, X).</p>
 </ul>
 '@;
 
@@ -415,17 +444,17 @@ $dataSet.Tables['Series'] |
 		
 $dataSet.Tables['Regions'] |
 	Out-SpreadTemplate -SheetName:'Regions (template)' `
-		-TemplateFile:'~\Templates\Regions.xlsx' `
+		-TemplateFileName:'~\Templates\Regions.xlsx' `
 		-Replace -CopyToBook;
 		
 $dataSet.Tables['Countries'] |
 	Out-SpreadTemplate -SheetName:'Countries (template)' `
-		-TemplateFile:'~\Templates\Countries.xlsx' `
+		-TemplateFileName:'~\Templates\Countries.xlsx' `
 		-Replace;
 		
 $dataSet.Tables['Series'] |
 	Out-SpreadTemplate -SheetName:'Series (template)' `
-		-TemplateFile:'~\Templates\Series.xlsx' `
+		-TemplateFileName:'~\Templates\Series.xlsx' `
 		-Replace;
 
 

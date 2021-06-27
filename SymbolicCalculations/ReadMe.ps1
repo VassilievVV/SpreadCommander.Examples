@@ -14,7 +14,7 @@ Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
 Write-Text -ParagraphStyle:'Header1' 'Symbolic mathematics';
 
 Write-Html -ParagraphStyle:'Description' @'
-<p align=justify><b>SpreadCommander</b> include <b>Math.Net.Numerics</b>
+<p align=justify><b>SpreadCommander</b> includes <b>Math.Net.Numerics</b>
 and <b>Math.Net.Symbolics</b> libraries and allows to perform
 symbolic mathematic calculations.</p>
 '@;

@@ -1,6 +1,6 @@
 ID   CODECountry                       Region                        Income Group                  Year Value     
-238  ALB Albania                       Europe & Central Asia         Upper middle income           2014 13.9268537
-3593 DZA Algeria                       Middle East & North Africa    Upper middle income           2014 9.79498687
+238  ALB Albania                       Europe & Central Asia         Upper middle income           2014 13.9269161
+3593 DZA Algeria                       Middle East & North Africa    Upper middle income           2014 9.79504253
 177  AGO Angola                        Sub-Saharan Africa            Lower middle income           2014 15.0186485
 482  ARG Argentina                     Latin America & Caribbean     Upper middle income           2014 9.69680780
 543  ARM Armenia                       Europe & Central Asia         Upper middle income           2014 9.87970486
@@ -12,121 +12,121 @@ ID   CODECountry                       Region                        Income Grou
 1458 BLR Belarus                       Europe & Central Asia         Upper middle income           2014 6.47286193
 970  BEL Belgium                       Europe & Central Asia         High income                   2014 9.54281532
 1031 BEN Benin                         Sub-Saharan Africa            Low income                    2014 6.79816824
-1641 BOL Bolivia                       Latin America & Caribbean     Lower middle income           2014 9.06850647
-1397 BIH Bosnia and Herzegovina        Europe & Central Asia         Upper middle income           2014 5.08837174
-1946 BWA Botswana                      Sub-Saharan Africa            Upper middle income           2014 12.5329673
+1641 BOL Bolivia                       Latin America & Caribbean     Lower middle income           2014 9.06850644
+1397 BIH Bosnia and Herzegovina        Europe & Central Asia         Upper middle income           2014 5.08839839
+1946 BWA Botswana                      Sub-Saharan Africa            Upper middle income           2014 12.5329914
 1702 BRA Brazil                        Latin America & Caribbean     Upper middle income           2014 10.5102858
 1824 BRN Brunei Darussalam             East Asia & Pacific           High income                   2014 9.38224180
-1214 BGR Bulgaria                      Europe & Central Asia         Upper middle income           2014 7.08552732
+1214 BGR Bulgaria                      Europe & Central Asia         Upper middle income           2014 7.08790339
 7436 KHM Cambodia                      East Asia & Pacific           Lower middle income           2014 7.64166063
 2495 CMR Cameroon                      Sub-Saharan Africa            Lower middle income           2014 9.50280674
 2068 CAN Canada                        North America                 High income                   2014 5.79318650
 2312 CHL Chile                         Latin America & Caribbean     High income                   2014 11.2087490
-2373 CHN China                         East Asia & Pacific           Upper middle income           2014 5.61076762
+2373 CHN China                         East Asia & Pacific           Upper middle income           2014 5.61076766
 2678 COL Colombia                      Latin America & Caribbean     Upper middle income           2014 18.3786365
 2556 COD Congo, Dem. Rep.              Sub-Saharan Africa            Low income                    2014 2.18261268
-2617 COG Congo, Rep.                   Sub-Saharan Africa            Lower middle income           2014 8.47234480
+2617 COG Congo, Rep.                   Sub-Saharan Africa            Lower middle income           2014 10.6131826
 2861 CRI Costa Rica                    Latin America & Caribbean     Upper middle income           2014 15.2715482
-5972 HRV Croatia                       Europe & Central Asia         High income                   2014 11.6248288
+5972 HRV Croatia                       Europe & Central Asia         High income                   2014 11.6241271
 3044 CUW Curaçao                       Latin America & Caribbean     High income                   2014 2.00613213
-3166 CYP Cyprus                        Europe & Central Asia         High income                   2014 12.9817437
-3227 CZE Czech Republic                Europe & Central Asia         High income                   2014 8.24071002
+3166 CYP Cyprus                        Europe & Central Asia         High income                   2014 12.9979360
+3227 CZE Czech Republic                Europe & Central Asia         High income                   2014 8.30179627
 2434 CIV Côte d'Ivoire                 Sub-Saharan Africa            Lower middle income           2014 5.10492031
 3471 DNK Denmark                       Europe & Central Asia         High income                   2014 16.6754467
 3532 DOM Dominican Republic            Latin America & Caribbean     Upper middle income           2014 17.9237816
 3959 ECU Ecuador                       Latin America & Caribbean     Upper middle income           2014 13.1761912
 4020 EGY Egypt, Arab Rep.              Middle East & North Africa    Lower middle income           2014 13.1673500
-12804SLV El Salvador                   Latin America & Caribbean     Lower middle income           2014 11.1990339
-4264 EST Estonia                       Europe & Central Asia         High income                   2014 6.34403170
-4325 ETH Ethiopia                      Sub-Saharan Africa            Low income                    2014 3.06958274
+12804SLV El Salvador                   Latin America & Caribbean     Lower middle income           2014 11.1990388
+4264 EST Estonia                       Europe & Central Asia         High income                   2014 6.34403185
+4325 ETH Ethiopia                      Sub-Saharan Africa            Low income                    2014 3.06958186
 4508 FIN Finland                       Europe & Central Asia         High income                   2014 6.72058551
 4630 FRA France                        Europe & Central Asia         High income                   2014 10.9710477
 4813 GAB Gabon                         Sub-Saharan Africa            Upper middle income           2014 5.70519398
 4935 GEO Georgia                       Europe & Central Asia         Upper middle income           2014 9.80751880
 3288 DEU Germany                       Europe & Central Asia         High income                   2014 12.4386889
 4996 GHA Ghana                         Sub-Saharan Africa            Lower middle income           2014 16.4366980
-5362 GRC Greece                        Europe & Central Asia         High income                   2014 12.6364150
-5545 GTM Guatemala                     Latin America & Caribbean     Upper middle income           2014 8.98421983
-6033 HTI Haiti                         Latin America & Caribbean     Low income                    2014 4.36638206
+5362 GRC Greece                        Europe & Central Asia         High income                   2014 12.6364149
+5545 GTM Guatemala                     Latin America & Caribbean     Upper middle income           2014 8.98421981
+6033 HTI Haiti                         Latin America & Caribbean     Low income                    2014 7.35941421
 5850 HND Honduras                      Latin America & Caribbean     Lower middle income           2014 7.44666870
 5789 HKG Hong Kong SAR, China          East Asia & Pacific           High income                   2014 27.8011105
-6094 HUN Hungary                       Europe & Central Asia         High income                   2014 11.0628765
+6094 HUN Hungary                       Europe & Central Asia         High income                   2014 11.0791083
 6887 ISL Iceland                       Europe & Central Asia         High income                   2014 2.55160110
 6582 IND India                         South Asia                    Lower middle income           2014 8.22198228
 6399 IDN Indonesia                     East Asia & Pacific           Lower middle income           2014 11.6279298
 6765 IRN Iran, Islamic Rep.            Middle East & North Africa    Upper middle income           2014 4.97835881
 6826 IRQ Iraq                          Middle East & North Africa    Upper middle income           2014 9.92212965
-6704 IRL Ireland                       Europe & Central Asia         High income                   2014 18.6272412
+6704 IRL Ireland                       Europe & Central Asia         High income                   2014 18.6272411
 6948 ISR Israel                        Middle East & North Africa    High income                   2014 12.3847496
 7009 ITA Italy                         Europe & Central Asia         High income                   2014 14.9907284
 7070 JAM Jamaica                       Latin America & Caribbean     Upper middle income           2014 8.74664069
 7192 JPN Japan                         East Asia & Pacific           High income                   2014 11.2883403
-7131 JOR Jordan                        Middle East & North Africa    Upper middle income           2014 9.86990097
+7131 JOR Jordan                        Middle East & North Africa    Upper middle income           2014 10.0107472
 7253 KAZ Kazakhstan                    Europe & Central Asia         Upper middle income           2014 5.57575761
 7314 KEN Kenya                         Sub-Saharan Africa            Lower middle income           2014 5.97124238
 7619 KOR Korea, Rep.                   East Asia & Pacific           High income                   2014 6.67851305
 15854XKX Kosovo                        Europe & Central Asia         Upper middle income           2014 7.41653866
 7680 KWT Kuwait                        Middle East & North Africa    High income                   2014 7.63517798
 7375 KGZ Kyrgyz Republic               Europe & Central Asia         Lower middle income           2014 6.58335508
-8778 LVA Latvia                        Europe & Central Asia         High income                   2014 10.9536117
+8778 LVA Latvia                        Europe & Central Asia         High income                   2014 10.9350127
 7863 LBN Lebanon                       Middle East & North Africa    Upper middle income           2014 12.5574674
 7985 LBY Libya                         Middle East & North Africa    Upper middle income           2014 5.09249157
-8656 LTU Lithuania                     Europe & Central Asia         High income                   2014 11.7942773
+8656 LTU Lithuania                     Europe & Central Asia         High income                   2014 11.8061262
 8717 LUX Luxembourg                    Europe & Central Asia         High income                   2014 14.7640286
 10242MYS Malaysia                      East Asia & Pacific           Upper middle income           2014 8.19313128
-9632 MLT Malta                         Middle East & North Africa    High income                   2014 18.7409428
+9632 MLT Malta                         Middle East & North Africa    High income                   2014 19.2781511
 10120MUS Mauritius                     Sub-Saharan Africa            Upper middle income           2014 16.6345852
-9327 MEX Mexico                        Latin America & Caribbean     Upper middle income           2014 11.5540630
+9327 MEX Mexico                        Latin America & Caribbean     Upper middle income           2014 11.5609821
 9083 MDA Moldova                       Europe & Central Asia         Lower middle income           2014 7.63842071
 9876 MNG Mongolia                      East Asia & Pacific           Lower middle income           2014 6.04796790
-9815 MNE Montenegro                    Europe & Central Asia         Upper middle income           2014 9.99251169
+9815 MNE Montenegro                    Europe & Central Asia         Upper middle income           2014 9.99255240
 8961 MAR Morocco                       Middle East & North Africa    Lower middle income           2014 12.0855760
-9998 MOZ Mozambique                    Sub-Saharan Africa            Low income                    2014 2.57317162
+9998 MOZ Mozambique                    Sub-Saharan Africa            Low income                    2014 2.57317042
 9693 MMR Myanmar                       East Asia & Pacific           Lower middle income           2014 11.4959006
-10364NAM Namibia                       Sub-Saharan Africa            Upper middle income           2014 13.0942762
+10364NAM Namibia                       Sub-Saharan Africa            Upper middle income           2014 13.0942763
 10791NPL Nepal                         South Asia                    Low income                    2014 5.96948461
 10669NLD Netherlands                   Europe & Central Asia         High income                   2014 11.3820241
 10913NZL New Zealand                   East Asia & Pacific           High income                   2014 8.17496161
-10608NIC Nicaragua                     Latin America & Caribbean     Lower middle income           2014 8.28807915
-10486NER Niger                         Sub-Saharan Africa            Low income                    2014 7.58077285
+10608NIC Nicaragua                     Latin America & Caribbean     Lower middle income           2014 8.28805228
+10486NER Niger                         Sub-Saharan Africa            Low income                    2014 7.61608584
 10547NGA Nigeria                       Sub-Saharan Africa            Lower middle income           2014 7.21181219
-9510 MKD North Macedonia               Europe & Central Asia         Upper middle income           2014 10.5896117
+9510 MKD North Macedonia               Europe & Central Asia         Upper middle income           2014 10.5896438
 10730NOR Norway                        Europe & Central Asia         High income                   2014 11.7756891
-11035OMN Oman                          Middle East & North Africa    High income                   2014 6.42503158
+11035OMN Oman                          Middle East & North Africa    High income                   2014 6.39415647
 11157PAK Pakistan                      South Asia                    Lower middle income           2014 9.20963505
 11218PAN Panama                        Latin America & Caribbean     High income                   2014 21.2038647
 11828PRY Paraguay                      Latin America & Caribbean     Upper middle income           2014 14.5906742
 11279PER Peru                          Latin America & Caribbean     Upper middle income           2014 14.5659749
 11340PHL Philippines                   East Asia & Pacific           Lower middle income           2014 14.6762213
-11523POL Poland                        Europe & Central Asia         High income                   2014 10.3550523
+11523POL Poland                        Europe & Central Asia         High income                   2014 10.2997629
 11767PRT Portugal                      Europe & Central Asia         High income                   2014 14.1274327
-12133QAT Qatar                         Middle East & North Africa    High income                   2014 7.20140553
-12194ROU Romania                       Europe & Central Asia         Upper middle income           2014 12.9570154
+12133QAT Qatar                         Middle East & North Africa    High income                   2014 7.20140110
+12194ROU Romania                       Europe & Central Asia         Upper middle income           2014 12.9786560
 12255RUS Russian Federation            Europe & Central Asia         Upper middle income           2014 5.29417148
 12438SAU Saudi Arabia                  Middle East & North Africa    High income                   2014 8.06941292
 12560SEN Senegal                       Sub-Saharan Africa            Lower middle income           2014 10.1382225
-12987SRB Serbia                        Europe & Central Asia         Upper middle income           2014 7.88389876
+12987SRB Serbia                        Europe & Central Asia         Upper middle income           2014 7.88392958
 12621SGP Singapore                     East Asia & Pacific           High income                   2014 16.4830958
-13414SVK Slovak Republic               Europe & Central Asia         High income                   2014 9.85039161
+13414SVK Slovak Republic               Europe & Central Asia         High income                   2014 9.85219271
 13475SVN Slovenia                      Europe & Central Asia         High income                   2014 9.53886652
 15976ZAF South Africa                  Sub-Saharan Africa            Upper middle income           2014 4.64518705
 13109SSD South Sudan                   Sub-Saharan Africa            Low income                    2014 22.5424273
 4203 ESP Spain                         Europe & Central Asia         High income                   2014 13.6026856
 8351 LKA Sri Lanka                     South Asia                    Upper middle income           2014 21.8363053
-12499SDN Sudan                         Sub-Saharan Africa            Lower middle income           2014 11.9978632
+12499SDN Sudan                         Sub-Saharan Africa            Lower middle income           2014 11.9978518
 13353SUR Suriname                      Latin America & Caribbean     Upper middle income           2014 13.8386248
 13536SWE Sweden                        Europe & Central Asia         High income                   2014 9.50071034
 2190 CHE Switzerland                   Europe & Central Asia         High income                   2014 20.2298829
 14207TJK Tajikistan                    Europe & Central Asia         Low income                    2014 9.71921537
-14939TZA Tanzania                      Sub-Saharan Africa            Low income                    2014 4.38221565
+14939TZA Tanzania                      Sub-Saharan Africa            Low income                    2014 4.38221566
 14146THA Thailand                      East Asia & Pacific           Upper middle income           2014 7.86195928
 14085TGO Togo                          Sub-Saharan Africa            Low income                    2014 2.87222981
 14695TTO Trinidad and Tobago           Latin America & Caribbean     High income                   2014 2.06763170
 14756TUN Tunisia                       Middle East & North Africa    Lower middle income           2014 10.9901665
-14817TUR Turkey                        Europe & Central Asia         Upper middle income           2014 15.2296345
+14817TUR Turkey                        Europe & Central Asia         Upper middle income           2014 15.3073442
 14268TKM Turkmenistan                  Europe & Central Asia         Upper middle income           2014 2.75697074
 15061UKR Ukraine                       Europe & Central Asia         Lower middle income           2014 4.37143634
 421  ARE United Arab Emirates          Middle East & North Africa    High income                   2014 9.62542514
 4874 GBR United Kingdom                Europe & Central Asia         High income                   2014 14.8582345
-15244USA United States                 North America                 High income                   2014 7.90625948
+15244USA United States                 North America                 High income                   2014 7.90870385
 15183URY Uruguay                       Latin America & Caribbean     High income                   2014 14.4973749

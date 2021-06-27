@@ -267,15 +267,23 @@ Write-Html -ParagraphStyle:'Text' @'
 <table>
 	<tr>
 		<td><b>MD5</b></td>
-		<td>Computed <i>MD5</i> hash.</td>
+		<td>Computed <i>MD5</i> hash. Second optional parameter allows to specify encoding (Unicode, UTF8, ASCII etc).</td>
 	</tr>
 	<tr>
 		<td><b>SHA1</b></td>
-		<td>Computes <i>SHA1</i> hash.</td>
+		<td>Computes <i>SHA1</i> hash. Second optional parameter allows to specify encoding (Unicode, UTF8, ASCII etc).</td>
 	</tr>
 	<tr>
 		<td><b>SHA256</b></td>
-		<td>Computes <i>SHA256</i> hash.</td>
+		<td>Computes <i>SHA256</i> hash. Second optional parameter allows to specify encoding (Unicode, UTF8, ASCII etc).</td>
+	</tr>
+	<tr>
+		<td><b>SHA384</b></td>
+		<td>Computes <i>SHA384</i> hash. Second optional parameter allows to specify encoding (Unicode, UTF8, ASCII etc).</td>
+	</tr>
+	<tr>
+		<td><b>SHA512</b></td>
+		<td>Computes <i>SHA512</i> hash. Second optional parameter allows to specify encoding (Unicode, UTF8, ASCII etc).</td>
 	</tr>
 </table>
 '@;
@@ -443,6 +451,17 @@ Write-Html -ParagraphStyle:'Text' @'
 	<tr>
 		<td><b>StringFormat</b></td>
 		<td>Formats string in .Net style.</td>
+	</tr>
+</table>
+'@;
+
+Write-Text -ParagraphStyle:'Header4' 'GUID';
+Write-Html -ParagraphStyle:'Text' @'
+<table>
+	<tr>
+		<td><b>NewID</b></td>
+		<td>Returns new GUID. Format ("N", "D", "B, "P" or "X") can be specified as first parameter.
+		    Default format is "D".</td>
 	</tr>
 </table>
 '@;

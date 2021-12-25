@@ -3,7 +3,7 @@ $schost.Silent = $true;
 
 Clear-Book;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Chart</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -47,7 +47,7 @@ where c.[Country Code] in ('ARB', 'CEB', 'EAS', 'ECS', 'LCN', 'MEA', 'NAC', 'SAS
 order by c.[Country Code], gdp.Year;
 '@;
 
-$dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
+$dataSet = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlData;
 
 $dtSankey = [Data.DataTable]::new('Sankey');
 [void]$dtSankey.Columns.Add('Source', [string]);
@@ -412,7 +412,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Chart cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Add-ChartAnnotation',
@@ -499,7 +499,8 @@ $firstParameterSet = $true;
 	'PolarPoint|Works for series <i>PolarPoint</i>, <i>PolarLine</i>, <i>ScatterPolarLine</i>, 
 		<i>PolarArea</i>, <i>PolarRangeArea</i>, <i>RadarPoint</i>, <i>RadarLine</i>, 
 		<i>ScatterRadarLine</i>, <i>RadarArea</i>, <i>RadarRangeArea</i>',
-	'Swift|Works for series <i>SwiftPlot</i>'
+	'SwiftPlot|Works for series <i>SwiftPlot</i>',
+	'SwiftPoint|Works for series <i>SwiftPoint</i>'
 ) |
 %{
 	if (-not $firstParameterSet) { Add-BookPageBreak; }
@@ -602,7 +603,8 @@ $firstParameterSet = $true;
 	'FullStackedSplineArea3D',
 	'RangeArea3D',
 	'BoxPlot',
-	'Waterfall'
+	'Waterfall',
+	'SwiftPoint'
 ) |
 %{
 	if (-not $firstParameterSet) { Add-BookPageBreak; }
@@ -724,4 +726,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;

@@ -3,7 +3,7 @@ $schost.Silent = $true;
 
 Clear-Book;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Async</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -88,7 +88,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Book cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Invoke-AsyncCommands',
@@ -113,4 +113,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;

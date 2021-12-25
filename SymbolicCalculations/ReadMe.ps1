@@ -1,12 +1,12 @@
 using namespace MathNet.Symbolics;
 using namespace System.Collections.Generic;
 
-$schost           = Get-SCHost;
+$schost        = Get-SCHost;
 $schost.Silent = $true;
 
 Clear-Book;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Symbolic Calculations</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -100,4 +100,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;

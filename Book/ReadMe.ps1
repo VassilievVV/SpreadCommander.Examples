@@ -3,7 +3,7 @@ $schost.Silent = $true;
 
 Clear-Book;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Book</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -140,7 +140,7 @@ Write-Text -ParagraphStyle:'Header4' 'Sample use of some cmdlets';
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>Write-Image</b>';
-Write-Image '~\..\Common\SpreadCommander.png';
+Write-Image '~#\..\Common\SpreadCommander.png';
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>Write-Latex</b>';
@@ -159,7 +159,7 @@ group by c.Region
 order by c.Region
 '@;
 
-$dsLandUse = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlLandUse;
+$dsLandUse = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlLandUse;
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>Write-DataTable</b>';
@@ -352,7 +352,7 @@ To add fields from PowerShell script use switch <b>ExpandFields</b> that is avai
 	and <i>Write-Html</i>.
 '@;
 
-$imagePath  = $schost.MapPath('~\..\Common\SpreadCommander.png').Replace('\', '\\');
+$imagePath  = $schost.MapPath('~#\..\Common\SpreadCommander.png').Replace('\', '\\');
 
 Write-Text -ParagraphStyle:'Text' -ExpandFields @"
 Today is {DATE} {TIME}{#FOOTNOTE "Foot note at end of the page." "Mark=*"}.
@@ -365,7 +365,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Book cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Add-BookCharacterStyle',
@@ -413,4 +413,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;

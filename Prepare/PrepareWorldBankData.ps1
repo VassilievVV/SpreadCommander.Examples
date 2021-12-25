@@ -21,7 +21,7 @@ $indicators = @(
 	'EG.USE.PCAP.KG.OE'
 );
 
-$connectionString = 'sqlite:~\..\Data\WorldData.db';
+$connectionString = 'sqlite:~#\..\Data\WorldData.db';
 $spreadTableStyle = 'Medium25';
 
 #Common code
@@ -30,12 +30,12 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem;
 
 
 #Import metadata
-$dirData      = $schost.MapPath('~\..\Data');
-$fileMetadata = $schost.MapPath('~\..\Data\WDI_Metadata.zip');
+$dirData      = $schost.MapPath('~#\..\Data');
+$fileMetadata = $schost.MapPath('~#\..\Data\WDI_Metadata.zip');
 
-$fileCountries       = $schost.MapPath('~\..\Data\WDICountry.csv');
-$fileSeries          = $schost.MapPath('~\..\Data\WDISeries.csv');
-$fileCountriesSeries = $schost.MapPath('~\..\Data\WDICountry-Series.csv');
+$fileCountries       = $schost.MapPath('~#\..\Data\WDICountry.csv');
+$fileSeries          = $schost.MapPath('~#\..\Data\WDISeries.csv');
+$fileCountriesSeries = $schost.MapPath('~#\..\Data\WDICountry-Series.csv');
 
 if (Test-Path $fileCountries) 
 	{ Remove-Item -LiteralPath:$fileCountries -Confirm:$false; }
@@ -106,8 +106,8 @@ function DownloadIndicatorData([string]$indicator)
 	Write-Text "Importing indicator: $indicator ...";
 	
 	$url     = "http://api.worldbank.org/v2/en/indicator/$($indicator)?downloadformat=xml";
-	$zipName = $schost.MapPath("~\..\Data\$indicator.zip");
-	$xmlFile = $schost.MapPath("~\..\Data\$indicator.xml");
+	$zipName = $schost.MapPath("~#\..\Data\$indicator.zip");
+	$xmlFile = $schost.MapPath("~#\..\Data\$indicator.xml");
 	$filter  = "API_$($indicator)_*.xml";
 
 	$wc = [Net.WebClient]::new();
@@ -182,4 +182,4 @@ create index [IX_$($indicator2)_Year] on [$indicator] ([Year]);
 
 $indicators | %{ DownloadIndicatorData($_) };
 
-Save-Spreadsheet '~\..\Data\WorldBank.xlsx' -Replace;
+Save-Spreadsheet '~#\..\Data\WorldBank.xlsx' -Replace;

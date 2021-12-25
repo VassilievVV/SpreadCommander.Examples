@@ -5,7 +5,7 @@ Clear-Book;
 Clear-Spreadsheet;
 Clear-Data;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Getting Started</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -92,7 +92,7 @@ Write-Html -ParagraphStyle:'Header4' 'Sample use of <b>Book</b>';
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>Image</b>';
-Write-Image '~\..\Common\SpreadCommander.png';
+Write-Image '~#\..\Common\SpreadCommander.png';
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>Write-Latex</b>';
@@ -111,7 +111,7 @@ group by c.Region
 order by c.Region
 '@;
 
-$dsLandUse = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlLandUse;
+$dsLandUse = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlLandUse;
 
 Write-Text -ParagraphStyle:'Text' '';
 Write-Html -ParagraphStyle:'Text' '<b>DataTable</b>';
@@ -214,7 +214,7 @@ where Year = 2014 and Value is not null and c.Region > ''
 order by Country;
 '@;
 
-$dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
+$dataSet = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlData;
 
 $dataSet.Tables['Energy use - by Regions'] |
 	Out-SpreadTable -SheetName:'Energy use - by Regions' `
@@ -290,7 +290,7 @@ where c.[Country Code] in ('ARB', 'CEB', 'EAS', 'ECS', 'LCN', 'MEA', 'NAC', 'SAS
 order by c.[Country Code], gdp.Year;
 '@;
 
-$dataChart = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlChart;
+$dataChart = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlChart;
 
 $dataChart.Tables['Data'] | 
 	New-Chart StackedArea -SeriesField:'Country' 'Year' 'GDP' -TextPattern:'{V:F0}' `
@@ -360,7 +360,7 @@ with <i>SQL script</i> and display results of executing of <i>SQL queries</i>.
 Check output on console tab <b>Data</b>.</p>
 '@;
 
-$dataSql = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -ScriptFile:'~\SampleData.sql';
+$dataSql = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -ScriptFile:'~#\SampleData.sql';
 $dataSql | Out-DataSet;
 
 
@@ -380,5 +380,5 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
-Save-Spreadsheet '~\ReadMe.xlsx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;
+Save-Spreadsheet '~#\ReadMe.xlsx' -Replace;

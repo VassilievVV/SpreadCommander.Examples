@@ -4,7 +4,7 @@ $schost.Silent = $true;
 Clear-Book;
 Clear-Data;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: SQL</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -31,15 +31,15 @@ it is recommended to use <i>Windows authentication</i>.</p>
 
 <p align=justify><i>Cmdlet</i> <i>Get-DbConnection</i> allows to specify 
 not only name of saved connection but also simplified connection string.
-SQLite allows to specify file path under project directory with '~\'
-(i.e. '~\Data\mydb.sqlite' is file mydb.sqlite in folder Data under
+SQLite allows to specify file path under project directory with '~#\'
+(i.e. '~#\Data\mydb.sqlite' is file mydb.sqlite in folder Data under
 project's root directory. Supported custom connection strings are:</p>
 
 <table>
 	<tr>
 		<td><b>sqlite:</b></td>
-		<td align=justify><Prefix for <i>SQLite</i> database. First part of connection string
-			is <i>Data Source</i>. For example 'sqlite:~\Data\MyDb.sqlite' opens
+		<td align=justify>Prefix for <i>SQLite</i> database. First part of connection string
+			is <i>Data Source</i>. For example 'sqlite:~#\Data\MyDb.sqlite' opens
 			connection to database located in file Data\MyDb.sqlite under 
 			current project's directory.</td>
 	</tr>
@@ -250,7 +250,7 @@ Details see at beginning of this ReadMe file, in section <b>SQL</b>. If first qu
 line GO) specifies <i>Connection</i> - it will be used by default to execute script, show execution plan and
 other features.</p>
 
-<p style='color:green'>--#connection "sqlite:~\..\Data\WorldData.db"</p>
+<p style='color:green'>--#connection "sqlite:~#\..\Data\WorldData.db"</p>
 '@;
 
 Add-BookPageBreak;
@@ -590,7 +590,7 @@ This section contains help for <i>cmdlets</i> that allow to output data (not onl
 results of executing <i>SQL queries</i>) into <b>Data</b> tab.
 '@;
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Out-Data',
@@ -617,4 +617,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;

@@ -4,7 +4,7 @@ $schost.Silent = $true;
 Clear-Book;
 Clear-Data;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Controls - Pivot</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -49,7 +49,7 @@ where c.[Country Code] in ('ARB', 'CEB', 'EAS', 'ECS', 'LCN', 'MEA', 'NAC', 'SAS
 order by c.[Country Code], gdp.Year;
 '@;
 
-$dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
+$dataSet = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlData;
 
 $dataSet.Tables['Data'] |
 	Out-Data -TableName:'Data' -Replace;
@@ -83,7 +83,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Controls cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Out-Data',
@@ -107,4 +107,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\Pivot.docx' -Replace;
+Save-Book '~#\Pivot.docx' -Replace;

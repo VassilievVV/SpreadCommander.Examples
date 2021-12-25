@@ -1,4 +1,4 @@
---#connection "sqlite:~\..\Data\WorldData.db"
+--#connection "sqlite:~#\..\Data\WorldData.db"
 
 --#table Regions
 --#format table Regions for "Contains([Short Name], 'Euro')" with BackColor=Yellow

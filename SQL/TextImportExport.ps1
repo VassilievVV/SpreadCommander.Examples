@@ -4,7 +4,7 @@ $schost.Silent = $true;
 Clear-Book;
 Clear-Data;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Text Import-Export</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -41,7 +41,7 @@ where Year = 2014 and Value is not null and c.Region > ''
 order by Country;
 '@;
 
-$dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
+$dataSet = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlData;
 
 
 Write-Html -ParagraphStyle:'Text' @'
@@ -49,9 +49,9 @@ First sample shows import/export of delimited file using default settings.
 '@;
 
 $dataSet.Tables['Energy use - by Regions'] |
-	Export-DelimitedText '~\Data\EnergyUse_ByRegions.csv' -Overwrite;
+	Export-DelimitedText '~#\Data\EnergyUse_ByRegions.csv' -Overwrite;
 
-Import-DelimitedText '~\Data\EnergyUse_ByRegions.csv' |
+Import-DelimitedText '~#\Data\EnergyUse_ByRegions.csv' |
 	Out-SpreadTable -SheetName:'Delimited001' `
 		-TableName:'Delimited001' -TableStyle:Medium25 -Replace;
 
@@ -125,7 +125,7 @@ Possible values: <i>$null</i>, <i>TruncateLeading</i>, <i>TruncateTrailing</i>.<
 '@;
 
 $dataSet.Tables['Energy use - by Regions'] |
-	Export-DelimitedText '~\Data\EnergyUse_ByRegions_2.csv' -Overwrite `
+	Export-DelimitedText '~#\Data\EnergyUse_ByRegions_2.csv' -Overwrite `
 	    -Columns: @(
 	        @{ ColumnName = 'Region';      ColumnType = [string] },
 	        @{ ColumnName = 'MinValue';    ColumnType = [double] },
@@ -134,7 +134,7 @@ $dataSet.Tables['Energy use - by Regions'] |
 	        @{ ColumnName = 'StdDev';      ColumnType = [double] }
 	    );
 
-Import-DelimitedText '~\Data\EnergyUse_ByRegions.csv' `
+Import-DelimitedText '~#\Data\EnergyUse_ByRegions.csv' `
         -Columns: @(
 	        @{ ColumnName = 'Region';      ColumnType = [string] },
 	        @{ ColumnName = 'MinValue';    ColumnType = [double] },
@@ -152,7 +152,7 @@ Import and export of text file with fixed-length formatting requires to specify 
 
 
 $dataSet.Tables['Energy use'] | 
-	Export-FixedLengthText '~\Data\EnergyUse_Data.txt' -Overwrite `
+	Export-FixedLengthText '~#\Data\EnergyUse_Data.txt' -Overwrite `
 		-Columns: @(
 			@{ ColumnName = 'ID'; 			ColumnType = [long];   ColumnLength = 5 },
 			@{ ColumnName = 'Country Code'; Caption = 'CODE';	   ColumnType = [string]; ColumnLength = 4 },
@@ -163,7 +163,7 @@ $dataSet.Tables['Energy use'] |
 			@{ ColumnName = 'Value'; 		ColumnType = [double]; ColumnLength = 10 }
 		);
 
-Import-FixedLengthText '~\Data\EnergyUse_Data.txt' `
+Import-FixedLengthText '~#\Data\EnergyUse_Data.txt' `
 		-Columns: @(
 			@{ ColumnName = 'ID'; 			ColumnType = [int];    ColumnLength = 5 },
 			@{ ColumnName = 'CountryCode'; 	ColumnType = [string]; ColumnLength = 3 },
@@ -185,9 +185,9 @@ added mostly to read files that comes with ESRI <b>SHP</b> map files. Export to
 
 $dataSet.Tables['Energy use - by Regions'] |
     #Select-Object Region, MinValue, MaxValue |
-	Export-Dbf '~\Data\EnergyUse_ByRegions.dbf' -Overwrite;
+	Export-Dbf '~#\Data\EnergyUse_ByRegions.dbf' -Overwrite;
 
-Import-Dbf '~\Data\EnergyUse_ByRegions.dbf' |
+Import-Dbf '~#\Data\EnergyUse_ByRegions.dbf' |
 	Out-SpreadTable -SheetName:'Dbf001' `
 		-TableName:'Dbf001' -TableStyle:Medium25 -Replace;
 
@@ -200,7 +200,7 @@ Write-Html -ParagraphStyle:'Text' @'
 This section contains help for <i>cmdlets</i> that allow to import and export text files.
 '@;
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Import-DelimitedText',
@@ -229,5 +229,5 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\TextImportExport.docx' -Replace;
-Save-Spreadsheet '~\TextImportExport.xlsx' -Replace;
+Save-Book '~#\TextImportExport.docx' -Replace;
+Save-Spreadsheet '~#\TextImportExport.xlsx' -Replace;

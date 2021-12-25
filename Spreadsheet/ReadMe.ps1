@@ -4,7 +4,7 @@ $schost.Silent = $true;
 Clear-Book;
 Clear-Spreadsheet;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Spreadsheet</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -94,7 +94,7 @@ where Year = 2014 and Value is not null and c.Region > ''
 order by Country;
 '@;
 
-$dataSet = Invoke-SqlScript 'sqlite:~\..\Data\WorldData.db' -Query:$sqlData;
+$dataSet = Invoke-SqlScript 'sqlite:~#\..\Data\WorldData.db' -Query:$sqlData;
 
 Write-Text -ParagraphStyle:'Header2' 'Work with data';
 
@@ -444,17 +444,17 @@ $dataSet.Tables['Series'] |
 		
 $dataSet.Tables['Regions'] |
 	Out-SpreadTemplate -SheetName:'Regions (template)' `
-		-TemplateFileName:'~\Templates\Regions.xlsx' `
+		-TemplateFileName:'~#\Templates\Regions.xlsx' `
 		-Replace -CopyToBook;
 		
 $dataSet.Tables['Countries'] |
 	Out-SpreadTemplate -SheetName:'Countries (template)' `
-		-TemplateFileName:'~\Templates\Countries.xlsx' `
+		-TemplateFileName:'~#\Templates\Countries.xlsx' `
 		-Replace;
 		
 $dataSet.Tables['Series'] |
 	Out-SpreadTemplate -SheetName:'Series (template)' `
-		-TemplateFileName:'~\Templates\Series.xlsx' `
+		-TemplateFileName:'~#\Templates\Series.xlsx' `
 		-Replace;
 
 
@@ -465,7 +465,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Spreadsheet cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Clear-Spreadsheet',
@@ -500,5 +500,5 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
-Save-Spreadsheet '~\ReadMe.xlsx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;
+Save-Spreadsheet '~#\ReadMe.xlsx' -Replace;

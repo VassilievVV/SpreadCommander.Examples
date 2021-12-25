@@ -3,7 +3,7 @@ $schost.Silent = $true;
 
 Clear-Book;
 
-Invoke-SCScript '~\..\Common\InitBookStyles.ps1';
+Invoke-SCScript '~#\..\Common\InitBookStyles.ps1';
 
 Set-BookSectionHeader '<b>Spread Commander</b> - <i>Examples: Map</i>' -Html;
 Set-BookSectionFooter 'Page {PAGE} of {NUMPAGES}' -ExpandFields;
@@ -70,7 +70,7 @@ Write-Html -ParagraphStyle:'Description' @'
 <a href="https://github.com/nvkelso/natural-earth-vector">Natural Eartch Project</a></p>
 '@;
 New-Map |
-	Add-MapLayerVectorFile '~\Data\ne_50m_admin_0_countries.shp' |
+	Add-MapLayerVectorFile '~#\Data\ne_50m_admin_0_countries.shp' |
 	Add-MapChoroplethColorizer 'GDP_MD_EST' @(0, 3000, 10000, 180000, 28000, 44000, 82000, 185000, 1000000, 2500000, 15000000) `
 		@('#5F8B95', '#799689', '#A2A875', '#CEBB5F', '#F2CB4E', '#F1C149', '#E5A84D', '#D6864E', '#C56450', '#BA4D51') |
 	Add-MapLegend ColorScale -Alignment:BottomCenter -Description:'Map legend description' -Header:'Map legend header' |
@@ -198,7 +198,7 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 
 Write-Text -ParagraphStyle:'Header2' 'Map cmdlets';
 
-. $schost.MapPath('~\..\Common\CmdletHelp.ps1');
+. $schost.MapPath('~#\..\Common\CmdletHelp.ps1');
 
 $cmdlets = [string[]]@(
 	'Add-MapChoroplethColorizer',
@@ -353,4 +353,4 @@ Add-BookSection -ContinuePageNumbering -LinkHeaderToPrevious -LinkFooterToPrevio
 Write-Text -ParagraphStyle:'Header2' 'Table of Contents';
 Add-BookTOC;
 
-Save-Book '~\ReadMe.docx' -Replace;
+Save-Book '~#\ReadMe.docx' -Replace;
